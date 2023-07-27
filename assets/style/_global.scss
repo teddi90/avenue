@@ -24,9 +24,9 @@ a{
 }
 .btn{
     padding: 10px 20px;
-    background: $main-color;
-    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.4), inset 0px 4px 10px rgba(0, 0, 0, 0.25);
-    border-radius:$border-radius;
+    border-radius:0px;
+    background: #000;
+    // box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.4);
     color:#fff;
     transition: all .3s ease-in;
     &:hover{
@@ -40,4 +40,64 @@ a{
 } 
 .text-center{
     text-align: center;
+}
+
+// Card
+.card{
+    box-shadow: 0 2px 4px 0 rgba(34,34,34,.2);
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius:0;
+    &:hover{
+        .card__img_hover {
+            z-index: 2;
+            opacity: 1;
+        }
+    }
+    &__img{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        min-width: 100%;
+        min-height: 100%;
+        z-index: 1;
+        &-wrapper {
+            position: relative;
+            overflow: hidden;
+            padding-top: 110%;
+        }
+        &_hover{
+            z-index: 0;
+            opacity: 0;
+            transition: opacity .4s ease-in-out;
+        }
+    }
+    &__like{
+        position: absolute;
+        z-index: 2;
+        top: 15px;
+        right: 10px;
+        border: none;
+        background: none;
+        &:hover{
+            svg{
+                transform: scale(1.2);
+            }
+        }
+        svg{
+            color:rgba($color: #fff, $alpha: 0.5);
+            transition: all .2s ease-in-out;
+        }
+    }
+    &__info{
+        padding: 15px 10px;
+    }
+    &__title{
+        font-size: 18px;
+        font-weight: 400;
+    }
+    &__price{
+        margin-bottom: 0px;
+    }
 }

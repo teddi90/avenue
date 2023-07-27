@@ -57,7 +57,7 @@
                 </div>
                 <div class="header__top-items">
                     <div v-if="!user" class="header__top-item">
-                        <Icon name="ph:user-thin" size="20" />
+                        <Icon name="ph:user" size="20" />
                         Акаунт
                         <div class="account-menu">
                             <span> Увійдіть у Ваш акаунт </span>
@@ -65,7 +65,7 @@
                         </div>
                     </div>
                     <div v-else class="header__top-item">
-                        <Icon name="ph:user-thin" size="20" />
+                        <Icon name="ph:user" size="20" />
                         {{ user.email }}
                         <div class="account-menu">
                             <NuxtLink to="/orders">Мої замовлення</NuxtLink>
@@ -75,8 +75,13 @@
                         </div>
                     </div>
                     <NuxtLink class="header__top-item" to="/shoppingcart">
-                        <Icon name="ph:shopping-cart-simple-light" size="20" />
+                        <Icon name="solar:cart-outline" size="20" />
                         Кошик
+                        <span
+                            v-if="userStore.cart.length"
+                            class="header__top-indicator"
+                            >{{ userStore.cart.length }}</span
+                        >
                     </NuxtLink>
                 </div>
             </div>
